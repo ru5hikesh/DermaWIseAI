@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import Navbar from './components/Navbar'; // Import the Navbar component
+import './App.css'; // Import the App CSS file
 
 function App() {
   const [message, setMessage] = useState('');
@@ -13,7 +15,10 @@ function App() {
 
   return (
     <div className="App">
-      <h1>{message}</h1>
+      <Navbar /> {}
+      <div className="message-container">
+        <h1>{message}</h1>
+      </div>
     </div>
   );
 }
