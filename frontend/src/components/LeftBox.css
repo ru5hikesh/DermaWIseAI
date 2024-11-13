@@ -1,0 +1,19 @@
+/* Styling for the left box */
+.left-box {
+    flex: 1;
+    background-color: #f0f0f0; /* Light gray background */
+    border: 2px dashed #aaa; /* Dashed border for "drag here" look */
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 200px;
+    border-radius: 8px;
+  }
+  
+  .left-box h2 {
+    font-size: 18px;
+    color: #333;
+  }
+  

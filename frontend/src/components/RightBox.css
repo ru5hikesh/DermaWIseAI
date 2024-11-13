@@ -1,0 +1,19 @@
+/* Styling for the right box */
+.right-box {
+    flex: 1;
+    background-color: #f8f9fa; /* Slightly lighter background */
+    border: 1px solid #ddd; /* Subtle solid border */
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 200px;
+    border-radius: 8px;
+  }
+  
+  .right-box h2 {
+    font-size: 18px;
+    color: #555;
+  }
+  
