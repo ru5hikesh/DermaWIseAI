@@ -9,6 +9,7 @@
 .main-content {
   max-width: 1400px;
   margin: 2rem auto;
+  margin-bottom: 0px;
   padding: 0 2rem;
   display: flex;
   flex-direction: column;
@@ -81,28 +82,17 @@
 }
 
 /* Message container styling */
-.message-container {
-  text-align: center;
-  padding: 2rem;
-  margin-top: 2rem;
-  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
-  border-radius: 12px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  transition: all 0.3s ease;
+.footer img {
+  width: 15px;
+  height: 15px
 }
 
-.message-container:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.footer {
+  display: flex;
+  justify-content: center;
+  
+  font-size: 15px;
 }
-
-.message-container h1 {
-  color: #0f172a;
-  font-size: 1.5rem;
-  font-weight: 500;
-  margin: 0;
-}
-
 /* Responsive design */
 @media (max-width: 768px) {
   .boxes-container {
