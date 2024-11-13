@@ -1,113 +1,121 @@
-/* Root container styling */
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* Main layout styling */
+.App {
+  min-height: 100vh;
+  min-width: 100vw;
+  background-color: #f5f5f5;
+  padding-top: 70px; /* Space for fixed navbar */
 }
 
-
-/* Layout for content boxes and message */
 .main-content {
-  padding-top: 80px; /* Add padding to avoid overlap with navbar */
+  max-width: 1400px;
+  margin: 2rem auto;
+  padding: 0 2rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 20px;
+  gap: 2rem;
 }
 
-.boxes {
+.boxes-container {
   display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  width: 80%;
-  margin: 0 auto;
+  gap: 2rem;
+  margin-bottom: 2rem;
 }
 
-/* Styling for the LeftBox component */
+/* Left box styling */
 .left-box {
-  flex: 1;
-  background-color: #f0f0f0;
-  border: 2px dashed #aaa;
-  padding: 20px;
+  flex: 0 0 350px; /* Fixed width */
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px dashed #cbd5e1;
+  padding: 2rem;
+  border-radius: 12px;
+  height: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  height: 200px;
-  border-radius: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(10px);
 }
 
-.left-box h2 {
-  font-size: 18px;
-  color: #333;
+.left-box:hover {
+  border-color: #94a3b8;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Styling for the RightBox component */
+/* Right box styling */
 .right-box {
   flex: 1;
-  background-color: #f8f9fa;
-  border: 1px solid #ddd;
-  padding: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid #e2e8f0;
+  padding: 2rem;
+  border-radius: 12px;
+  height: 500px;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  height: 200px;
-  border-radius: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
-.right-box h2 {
-  font-size: 18px;
-  color: #555;
+.right-box:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+}
+
+/* Box content styling */
+.box-content {
+  text-align: center;
+}
+
+.box-title {
+  color: #334155;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.drag-text {
+  color: #64748b;
+  font-size: 1rem;
 }
 
 /* Message container styling */
 .message-container {
-  margin-top: auto; /* Push the message to the bottom */
   text-align: center;
-  font-size: 24px;
-  font-weight: bold;
-  color: #333;
+  padding: 2rem;
+  margin-top: 2rem;
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
 }
 
-/* Existing logo styling */
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+.message-container:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+.message-container h1 {
+  color: #0f172a;
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 0;
 }
 
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Responsive design */
+@media (max-width: 768px) {
+  .boxes-container {
+      flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .left-box {
+      flex: none;
+      width: 100%;
+      height: 250px;
   }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+  
+  .right-box {
+      height: 400px;
   }
-}
-
-/* Card styling */
-.card {
-  padding: 2em;
-}
-
-/* Additional helper text styling */
-.read-the-docs {
-  color: #888;
 }
