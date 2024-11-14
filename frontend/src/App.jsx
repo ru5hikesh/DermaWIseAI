@@ -1,5 +1,9 @@
+// src/App.jsx
 import React, { useEffect, useState } from 'react';
-import Navbar from './components/Navbar';
+import Navbar from './components/Navbar/Navbar';
+import LeftBox from './components/LeftBox/LeftBox';
+import RightBox from './components/RightBox/RightBox';
+import Footer from './components/Footer/Footer';
 import './App.css';
 
 function App() {
@@ -17,30 +21,11 @@ function App() {
       <Navbar />
       <div className="main-content">
         <div className="boxes-container">
-          <div className="left-box">
-            <div className="box-content">
-              <h2 className="box-title">Upload Image</h2>
-              <p className="drag-text">Drag and drop your image here</p>
-            </div>
-          </div>
-          
-          <div className="right-box">
-            <div className="box-content">
-              <h2 className="box-title">Predictions and Analysis of the Disease</h2>
-            </div>
-          </div>
+          <LeftBox />
+          <RightBox />
         </div>
 
-        <div className="footer">
-          <p>
-            <span>© made with </span>
-            <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Beating%20Heart.png" alt="Beating heart" />
-            <span> by </span>
-            <a href="https://github.com/ru5hikesh" target="_blank" rel="noopener noreferrer">ru5hikesh</a>
-            <span> {message} </span>
-          </p>
-        </div>
-            
+        <Footer message={message} />
       </div>
     </div>
   );

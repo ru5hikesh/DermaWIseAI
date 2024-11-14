@@ -7,4 +7,4 @@ from rest_framework import status
 
 class HelloWorld(APIView):
     def get(self, request):
-        return Response({"message": "Hello from Django!"}, status=status.HTTP_200_OK)
+        return Response({"message": "- Django API"}, status=status.HTTP_200_OK)

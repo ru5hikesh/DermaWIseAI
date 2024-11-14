@@ -1,0 +1,33 @@
+/* src/components/RightBox.css */
+
+/* Right box styling */
+.right-box {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid #e2e8f0;
+  padding: 2rem;
+  border-radius: 12px;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.right-box:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+}
+
+/* Box content styling */
+.box-content {
+  text-align: center;
+}
+
+.box-title {
+  color: #334155;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
