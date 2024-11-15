@@ -21,26 +21,32 @@ const RightBox = ({ isImageUploaded }) => {
   }, [isImageUploaded]);
 
   const getDemoContent = () => ({
-    disease: "Bacterial Leaf Blight",
-    confidence: "98.5%",
-    description: "Bacterial Leaf Blight is a serious disease affecting rice crops, caused by Xanthomonas oryzae pv. oryzae.",
-    symptoms: [
-      "Yellow to white lesions along leaf veins",
-      "Lesions turn gray with age",
-      "Affects crop yield significantly"
+    "disease": "Eczema",
+    "confidence": "98.5%",
+    "description": "Eczema, also known as atopic dermatitis, is a chronic skin condition that causes inflammation, redness, and itching.",
+    "symptoms": [
+      "Dry, sensitive skin",
+      "Itching, especially at night",
+      "Red to brownish-gray patches on the skin",
+      "Cracked, scaly, or thickened skin",
+      "Fluid-filled blisters that may ooze and crust over"
     ],
-    precautions: [
-      "Use disease-resistant varieties",
-      "Maintain proper field drainage",
-      "Apply balanced fertilizers",
-      "Practice crop rotation"
+    "precautions": [
+      "Moisturize skin regularly with hypoallergenic creams",
+      "Avoid known irritants and allergens",
+      "Wear soft, breathable fabrics like cotton",
+      "Take lukewarm baths and avoid harsh soaps",
+      "Keep fingernails trimmed to avoid scratching"
     ],
-    treatment: [
-      "Remove infected plants",
-      "Apply copper-based bactericides",
-      "Maintain proper spacing between plants"
+    "treatment": [
+      "Apply topical corticosteroids as prescribed",
+      "Use antihistamines to reduce itching",
+      "Take oral medications like immunosuppressants if severe",
+      "Consider light therapy (phototherapy)",
+      "Follow up regularly with a dermatologist"
     ]
-  });
+  }
+  );
 
   return (
     <div className="right-box">
@@ -52,7 +58,7 @@ const RightBox = ({ isImageUploaded }) => {
         {analysisState === 'loading' && (
           <div className="loading-container">
             <div className="loading-spinner"></div>
-            <p className="loading-text">Analyzing image...</p>
+            <p className="loading-text">Analyzing</p>
           </div>
         )}
 
