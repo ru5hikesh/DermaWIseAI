@@ -1,50 +1,29 @@
+// src/components/LeftBox.jsx
 import React, { useState } from 'react';
 import './LeftBox.css';
 
-const LeftBox = () => {
+const LeftBox = ({ onImageUpload }) => {
   const [isDragging, setIsDragging] = useState(false);
-  const [image, setImage] = useState(null);
   const [previewUrl, setPreviewUrl] = useState(null);
 
-  const handleDragEnter = (e) => {
+  const handleDragEvents = (e, isDragging) => {
     e.preventDefault();
     e.stopPropagation();
-    setIsDragging(true);
-  };
-
-  const handleDragLeave = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    setIsDragging(false);
-  };
-
-  const handleDragOver = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    if (!isDragging) setIsDragging(true);
-  };
-
-  const handleDrop = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    setIsDragging(false);
-
-    const files = e.dataTransfer.files;
-    handleFiles(files);
+    setIsDragging(isDragging);
   };
 
   const handleFiles = (files) => {
-    if (files && files[0]) {
+    if (files?.[0]) {
       const file = files[0];
       if (!file.type.startsWith('image/')) {
         alert('Please upload an image file');
         return;
       }
 
-      setImage(file);
       const reader = new FileReader();
       reader.onload = () => {
         setPreviewUrl(reader.result);
+        onImageUpload(true); // Trigger the analysis in RightBox
       };
       reader.readAsDataURL(file);
     }
@@ -54,19 +33,20 @@ const LeftBox = () => {
     const input = document.createElement('input');
     input.type = 'file';
     input.accept = 'image/*';
-    input.onchange = (e) => {
-      handleFiles(e.target.files);
-    };
+    input.onchange = (e) => handleFiles(e.target.files);
     input.click();
   };
 
   return (
     <div
       className={`left-box ${isDragging ? 'dragging' : ''} ${previewUrl ? 'has-image' : ''}`}
-      onDragEnter={handleDragEnter}
-      onDragLeave={handleDragLeave}
-      onDragOver={handleDragOver}
-      onDrop={handleDrop}
+      onDragEnter={(e) => handleDragEvents(e, true)}
+      onDragLeave={(e) => handleDragEvents(e, false)}
+      onDragOver={(e) => handleDragEvents(e, true)}
+      onDrop={(e) => {
+        handleDragEvents(e, false);
+        handleFiles(e.dataTransfer.files);
+      }}
       onClick={handleClick}
     >
       {previewUrl ? (
@@ -76,8 +56,8 @@ const LeftBox = () => {
             className="remove-button"
             onClick={(e) => {
               e.stopPropagation();
-              setImage(null);
               setPreviewUrl(null);
+              onImageUpload(false);
             }}
           >
             Remove

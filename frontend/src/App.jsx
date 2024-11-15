@@ -8,6 +8,7 @@ import './App.css';
 
 function App() {
   const [message, setMessage] = useState('');
+  const [isImageUploaded, setIsImageUploaded] = useState(false);
 
   useEffect(() => {
     fetch('http://127.0.0.1:8000/api/hello/')
@@ -21,8 +22,8 @@ function App() {
       <Navbar />
       <div className="main-content">
         <div className="boxes-container">
-          <LeftBox />
-          <RightBox />
+          <LeftBox onImageUpload={setIsImageUploaded} />
+          <RightBox isImageUploaded={isImageUploaded} />
         </div>
 
         <Footer message={message} />
