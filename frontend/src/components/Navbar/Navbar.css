@@ -1,0 +1,78 @@
+/* Navbar styling */
+.navbar {
+    background-color: #1a1a1a;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.navbar-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;  /* Consistent spacing between items */
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li {
+    margin: 0;
+}
+
+.navbar a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 8px 15px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar a:hover {
+    background-color: #555;
+    color: #f0f0f0;
+}
+
+.profile-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ffffff;
+}
+
+.profile-name {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* Add responsive design */
+@media (max-width: 768px) {
+    .navbar-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .profile-section {
+        margin-top: 10px;
+    }
+}

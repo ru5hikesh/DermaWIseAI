@@ -1,0 +1,86 @@
+.left-box {
+  flex: 0 0 350px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid #9ca3af;
+  padding: 2.5rem;
+  border-radius: 16px;
+  height: 320px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.4s ease-in-out;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(15px);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.left-box:hover {
+  border-color: #6b7280;
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.left-box.dragging {
+  border-color: #3b82f6;
+  background: rgba(59, 130, 246, 0.1);
+}
+
+.left-box.has-image {
+  border-style: solid;
+}
+
+.box-content {
+  text-align: center;
+}
+
+.box-title {
+  color: #1e3a8a;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+}
+
+.drag-text {
+  color: #475569;
+  font-size: 1.125rem;
+}
+
+.preview-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.preview-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+.remove-button {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 0.625rem 1.25rem;
+  border-radius: 8px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.preview-container:hover .remove-button {
+  opacity: 1;
+}
+
+.remove-button:hover {
+  background: #dc2626;
+}

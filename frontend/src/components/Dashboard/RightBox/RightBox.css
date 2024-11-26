@@ -1,0 +1,153 @@
+/* src/components/RightBox.css */
+.right-box {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid #e2e8f0;
+  
+  border-radius: 12px;
+  height: 500px;
+  overflow-y: auto;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.right-box:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+}
+
+.box-content {
+  text-align: left;
+}
+
+.box-title {
+  color: #334155;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Loading Animation */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.loading-text {
+  color: #64748b;
+  font-size: 1.5rem;
+  font-weight: 600;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(90deg, #64748b, #a1a1aa, #64748b);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 1.5s infinite, pulse 2s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% center;
+  }
+  100% {
+    background-position: -200% center;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+}
+
+/* Analysis Content Styling */
+.analysis-content {
+  padding: 1rem;
+  opacity: 0;
+  animation: fade-in 0.5s ease-in-out 0.5s forwards;
+}
+
+.detection-title {
+  color: #1e293b;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.confidence-badge {
+  display: inline-block;
+  background: #22c55e;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+}
+
+.disease-section,
+.symptoms-section,
+.precautions-section,
+.treatment-section {
+  margin-bottom: 1.5rem;
+}
+
+.disease-name {
+  color: #ef4444;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.disease-description {
+  color: #4b5563;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  color: #1e293b;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  color: #4b5563;
+}
+
+li {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+/* Animations */
+@keyframes fade-in {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes loading-text {
+  0% {
+    transform: translateY(0);
+    text-shadow: 0 0 0 rgba(255, 255, 255, 0.5);
+  }
+  50% {
+    transform: translateY(-20px);
+    text-shadow: 0 20px 30px rgba(255, 255, 255, 0.8);
+  }
+  100% {
+    transform: translateY(0);
+    text-shadow: 0 0 0 rgba(255, 255, 255, 0.5);
+  }
+}

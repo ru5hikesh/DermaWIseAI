@@ -1,0 +1,19 @@
+/* src/components/Footer.css */
+
+/* Footer styling */
+.footer {
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  .footer a {
+    color: #4e8af7;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  
+  .footer img {
+    width: 15px;
+    height: 15px
+  }
+  

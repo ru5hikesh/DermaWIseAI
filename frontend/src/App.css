@@ -1,0 +1,32 @@
+/* src/App.css */
+
+/* Main layout styling */
+.App {
+  min-height: 100vh;
+  min-width: 100vw;
+  background-color: #f5f5f5;
+  padding-top: 70px; /* Space for fixed navbar */
+}
+
+.main-content {
+  max-width: 1400px;
+  margin: 2rem auto;
+  margin-bottom: 0px;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.boxes-container {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .boxes-container {
+    flex-direction: column;
+  }
+}

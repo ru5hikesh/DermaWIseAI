@@ -1,0 +1,75 @@
+/* Doctor.css */
+.doctor-portal {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .doctor-portal h1 {
+    text-align: center;
+    color: #4CAF50;
+  }
+  
+  .doctor-portal h2 {
+    color: #555;
+  }
+  
+  .input-field {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  .input-field:focus {
+    border-color: #4CAF50;
+    outline: none;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  .register-section,
+  .login-section {
+    max-width: 400px;
+    margin: 20px auto;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .register-section input,
+  .login-section input {
+    margin-bottom: 10px;
+  }
+  
+  .doctor-details {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .doctor-details p {
+    margin: 5px 0;
+  }
+  
+  .doctor-details p strong {
+    color: #4CAF50;
+  }
+  
