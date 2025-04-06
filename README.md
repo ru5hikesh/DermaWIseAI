@@ -82,3 +82,31 @@ source .venv/bin/activate  # Mac/Linux
 ```bash
 pip install numpy pandas matplotlib seaborn scikit-learn tensorflow
 ```
+
+folder structure
+DermaWIseAI/
+├── .venv/
+├── README.md                   # Project documentation
+├── backend/
+│   ├── backend/                # Django project settings
+│   ├── manage.py               # Django management script
+│   ├── db.sqlite3              # SQLite database
+│   └── predictor/              # Django app for AI prediction
+│       ├── __init__.py
+│       ├── admin.py            # Django admin configuration
+│       ├── apps.py             # App configuration
+│       ├── models.py           # Database models
+│       ├── views.py            # API views/endpoints
+│       ├── tests.py            # Unit tests
+│       ├── model.py            # AI model implementation (active file)
+│       ├── dataset/            # Training/testing datasets
+│       ├── logs/               # Model training logs
+│       ├── model/              # Saved model files
+│       └── results/            # Prediction results
+│
+└── frontend/                   # Next.js frontend
+    ├── src/                    # Source code
+    ├── package.json            # Node.js dependencies
+    ├── next.config.mjs         # Next.js configuration
+    ├── tailwind.config.mjs     # Tailwind CSS configuration
+    └── README.md               # Frontend documentation
