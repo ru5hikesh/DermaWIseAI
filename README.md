@@ -60,3 +60,52 @@ The main objective of this project is to:
 
 The application of machine learning in skin disease detection holds great promise, especially in areas where expert dermatological services are limited. By automating the classification of dermatoscopic images, we aim to improve the accessibility and accuracy of skin disease diagnosis, offering a potential tool for early detection and treatment.
 
+
+make .venv for python version 10 - source .venv/bin/activate
+
+Alright bet, here’s a clean and crisp `README.md` snippet tailored for that exact scenario — **new laptop**, **fresh clone**, **no `requirements.txt`**, and you need **Python 3.10.x** via `pyenv`. Plug and play 🚀:
+
+---
+
+```markdown
+# 🧠 DermaWiseAI – Skin Disease Detection using CNN
+
+This project detects skin diseases from dermatoscopic images using a CNN model trained on the HAM10000 dataset.
+
+---
+
+## ⚙️ Setup Instructions (for a fresh laptop)
+
+### 1. Clone the repo
+```bash
+git clone https://github.com/your-username/DermaWiseAI.git
+cd DermaWiseAI
+```
+
+---
+
+### 2. Install Python 3.10.x using pyenv (if not already installed)
+> You need pyenv to manage Python versions. Install it via Homebrew:
+
+```bash
+brew install pyenv
+pyenv install 3.10.14
+pyenv local 3.10.14  # sets it for this project
+```
+
+---
+
+### 3. Create a virtual environment
+```bash
+python3 -m venv .venv
+source .venv/bin/activate  # Mac/Linux
+```
+
+---
+
+### 4. Install dependencies manually
+> Since there's no `requirements.txt`, install deps like this:
+
+```bash
+pip install numpy pandas matplotlib seaborn scikit-learn tensorflow
+```
