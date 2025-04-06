@@ -1,24 +1,4 @@
-# DermaWiseAI
-# Skin Disease Analysis and Prediction using Machine Learning
-
-### Authors:
-- Rushikesh Kolge
-- Shrutika Jagtap
-- Mayuresh Karnavat
-- Rupali Khairnar
-- Dr. J. R. Panchal
-
-### Department of Computer Engineering  
-Dr. D. Y. Patil College of Engineering and Innovation, Pune, India
-
-### Contact:
-- Shrutika Jagtap: [shrutikajagtap.2003@gmail.com](mailto:shrutikajagtap.2003@gmail.com)
-- Mayuresh Karnavat: [mayuresh1803@gmail.com](mailto:mayuresh1803@gmail.com)
-- Rupali Khairnar: [rupalikhairnar2808@gmail.com](mailto:rupalikhairnar2808@gmail.com)
-- Rushikesh Kolge: [rushikesh3824@gmail.com](mailto:rushikesh3824@gmail.com)
-- Dr. J. R. Panchal: [jagruti.panchal@dypatilef.com](mailto:jagruti.panchal@dypatilef.com)
-
----
+# DermaWiseAI - Skin Disease Analysis and Prediction using Machine Learning
 
 ## Abstract
 
@@ -64,13 +44,6 @@ The application of machine learning in skin disease detection holds great promis
 make .venv for python version 10 - source .venv/bin/activate
 
 Alright bet, here’s a clean and crisp `README.md` snippet tailored for that exact scenario — **new laptop**, **fresh clone**, **no `requirements.txt`**, and you need **Python 3.10.x** via `pyenv`. Plug and play 🚀:
-
----
-
-```markdown
-# 🧠 DermaWiseAI – Skin Disease Detection using CNN
-
-This project detects skin diseases from dermatoscopic images using a CNN model trained on the HAM10000 dataset.
 
 ---
 
