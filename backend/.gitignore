@@ -1,0 +1,45 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+.venv/
+env/
+ENV/
+venv/
+
+# Django DB + logs
+db.sqlite3
+*.log
+
+# Environment variables
+.env
+
+# Django static/media
+media/
+staticfiles/
+
+# VS Code settings
+.vscode/
+
+# Frontend dependencies (optional, if using Node)
+frontend/node_modules/
+frontend/.next/
+frontend/.env.local
+
+# ML model files and datasets
+*.h5
+*.pt
+*.ckpt
+*.pkl
+*.npz
+*.joblib
+*.tflite
+*.onnx
+
+# Datasets
+backend/predictor/dataset/
+!backend/predictor/dataset/HAM10000_metadata*  # keep metadata CSV if needed
+
+# Ignore generated pip installer
+get-pip.py
