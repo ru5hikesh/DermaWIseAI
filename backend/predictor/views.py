@@ -54,12 +54,12 @@ class PredictionView(APIView):
             bedrock_client = BedrockClient()
             bedrock_result = bedrock_client.get_explanation(prediction_result)
             
-            # Combine results
+            # Combine results - only include the top disease as requested
+            # Pass through the raw Bedrock response without modification
             combined_result = {
                 'disease': prediction_result['disease'],
                 'confidence': prediction_result['confidence'],
-                'top_predictions': prediction_result.get('top_predictions', []),
-                'explanation': bedrock_result['explanation'],
+                'explanation': bedrock_result['explanation']
             }
             
             logger.info(f"Prediction complete: {prediction_result['disease']} with {prediction_result['confidence']:.2f} confidence")
