@@ -16,7 +16,7 @@
     * Integrated prediction and Bedrock explanation
 5. Testing
     * Added a test script to verify the prediction pipeline
-         ┌────────────┐
+       ┌────────────┐
        │  Frontend  │ (Next.js)
        └────┬───────┘
             │ (1) Image upload (form or drag/drop)
