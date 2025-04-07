@@ -1,0 +1,51 @@
+1. Django REST Framework Setup
+    * Added DRF and CORS middleware to settings.py
+    * Configured URL patterns to include API endpoints
+    * Set up media handling for image uploads
+2. Prediction Module
+    * Created a singleton pattern for efficient model loading
+    * Implemented image preprocessing for various formats
+    * Added comprehensive error handling and logging
+3. AWS Bedrock Integration
+    * Implemented a client for AWS Bedrock Agent
+    * Created fallback mechanisms for when Bedrock is unavailable
+    * Added structured response formatting
+4. API Endpoint
+    * Created a REST endpoint for image uploads
+    * Added validation for image files (type, size)
+    * Integrated prediction and Bedrock explanation
+5. Testing
+    * Added a test script to verify the prediction pipeline
+         ┌────────────┐
+       │  Frontend  │ (Next.js)
+       └────┬───────┘
+            │ (1) Image upload (form or drag/drop)
+            ▼
+    ┌───────────────┐
+    │   API Layer   │ (Django REST endpoint)
+    └─────┬─────────┘
+          │ (2) Parse image from multipart/form-data
+          ▼
+   ┌──────────────────┐
+   │  Prediction Code │ (predictor/model.py)
+   │  TensorFlow .h5  │
+   └────────┬─────────┘
+            │ (3) Output:
+            │     - disease
+            │     - confidence
+            │     - additional info
+            ▼
+    ┌────────────────────┐
+    │ AWS Bedrock Client │ (boto3 or HTTP call to Agent)
+    └────────┬───────────┘
+             │ (4) Sends prediction to Bedrock Agent
+             │     and gets explanation/context
+             ▼
+       ┌──────────────┐
+       │  Final JSON  │ (combined response)
+       └────┬─────────┘
+            │ (5) Send to frontend
+            ▼
+       ┌────────────┐
+       │  Frontend  │
+       └────────────┘
