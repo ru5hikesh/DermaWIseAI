@@ -12,3 +12,4 @@ frontend/.next/
 
 # Misc
 get-pip.py
+.DS_Store
