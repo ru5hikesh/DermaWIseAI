@@ -1,6 +1,22 @@
+# Django backend specific .gitignore
+
 # Python bytecode
 __pycache__/
 *.py[cod]
+*$py.class
+
+# Distribution / packaging
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+parts/
+bin/
+var/
+sdist/
+develop-eggs/
+.installed.cfg
 
 # Virtual environments
 .venv/
@@ -8,24 +24,49 @@ env/
 ENV/
 venv/
 
-# Django DB + logs
+# Django stuff
 db.sqlite3
+db.sqlite3-journal
 *.log
+local_settings.py
 
 # Environment variables
 .env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 
 # Django static/media
-media/
+/media/
+/static/
 staticfiles/
+collected_static/
 
-# VS Code settings
+# Django migrations (optional, uncomment if needed)
+# */migrations/*.py
+# !*/migrations/__init__.py
+
+# Django test coverage
+.coverage
+htmlcov/
+.tox/
+.coverage.*
+.cache/
+nosetests.xml
+coverage.xml
+*.cover
+
+# IDE specific files
+.idea/
 .vscode/
+*.swp
+*.swo
 
-# Frontend dependencies (optional, if using Node)
-frontend/node_modules/
-frontend/.next/
-frontend/.env.local
+# macOS specific files
+.DS_Store
+.AppleDouble
+.LSOverride
 
 # ML model files and datasets
 *.h5
@@ -38,8 +79,20 @@ frontend/.env.local
 *.onnx
 
 # Datasets
-backend/predictor/dataset/
-!backend/predictor/dataset/HAM10000_metadata*  # keep metadata CSV if needed
+predictor/dataset/
+!predictor/dataset/HAM10000_metadata*  # keep metadata CSV if needed
+
+# Temporary files
+*.bak
+*.tmp
+*~
+
+# Celery stuff (if using)
+celerybeat-schedule
+celerybeat.pid
+
+# Jupyter Notebook
+.ipynb_checkpoints
 
 # Ignore generated pip installer
 get-pip.py
