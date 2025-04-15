@@ -80,8 +80,43 @@
     > Since there's no `requirements.txt`, install deps like this:
 
     ```bash
-    pip install numpy pandas matplotlib seaborn scikit-learn tensorflow
+    pip install numpy pandas matplotlib seaborn scikit-learn tensorflow python-dotenv djangorestframework django-cors-headers boto3
     ```
+
+    for Powershell
+    Perfect. Here's the TL;DR of what you did in PowerShell:
+
+---
+
+### 🧠 **What You Did (Windows / PowerShell version)**
+
+1. **Created a virtual env**  
+   ```powershell
+   python -m venv .venv
+   ```
+
+2. **Activated it (PowerShell style)**  
+   ```powershell
+   .venv\Scripts\Activate.ps1
+   ```
+
+3. **(Optional fix)** Allowed script execution if blocked  
+   ```powershell
+   Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
+   ```
+
+4. **Installed your dependencies**  
+   ```powershell
+   pip install django numpy pandas matplotlib seaborn scikit-learn tensorflow
+   ```
+
+5. **Ran the Django backend**  
+   ```powershell
+   cd backend
+   python manage.py runserver
+   ```
+
+---
 
     folder structure
     DermaWIseAI/
@@ -110,3 +145,5 @@
         ├── next.config.mjs         # Next.js configuration
         ├── tailwind.config.mjs     # Tailwind CSS configuration
         └── README.md               # Frontend documentation
+
+
