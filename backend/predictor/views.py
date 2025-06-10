@@ -5,7 +5,8 @@ from django.conf import settings
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-from rest_framework.parsers import MultiPartParser, FormParser
+from rest_framework.parsers import MultiPartParser, FormParser, JSONParser
+from rest_framework import status
 from .prediction import predict_image
 from .bedrock_client import BedrockClient
 
@@ -70,5 +71,46 @@ class PredictionView(APIView):
             logger.error(f"Error processing prediction: {str(e)}")
             return Response(
                 {'error': f'An error occurred during prediction: {str(e)}'}, 
+                status=status.HTTP_500_INTERNAL_SERVER_ERROR
+            )
+
+
+class BedrockChatView(APIView):
+    """API endpoint for text-based chat with AWS Bedrock"""
+    parser_classes = (JSONParser,)
+    
+    def post(self, request):
+        """
+        Handle POST requests with text messages for Bedrock
+        
+        Expected JSON format:
+        {
+            "message": "Your text message here"
+        }
+        """
+        try:
+            message = request.data.get('message')
+            
+            if not message or not isinstance(message, str):
+                return Response(
+                    {'error': 'Message is required and must be a string'},
+                    status=status.HTTP_400_BAD_REQUEST
+                )
+            
+            bedrock_client = BedrockClient()
+            response = bedrock_client.chat(message)
+            
+            if not response.get('success'):
+                return Response(
+                    {'error': f"Failed to get response from Bedrock: {response.get('error', 'Unknown error')}"},
+                    status=status.HTTP_502_BAD_GATEWAY
+                )
+                
+            return Response(response['response'])
+            
+        except Exception as e:
+            logger.error(f"Error in Bedrock chat: {str(e)}")
+            return Response(
+                {'error': f'An error occurred while processing your request: {str(e)}'},
                 status=status.HTTP_500_INTERNAL_SERVER_ERROR
             )
