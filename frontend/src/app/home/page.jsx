@@ -1,10 +1,16 @@
 'use client';
 
 import { useState } from 'react';
+import dynamic from 'next/dynamic';
 import Footer from "@/components/ui/Footer";
 import LeftBox from "@/components/ui/LeftBox";
 import Navbar from "@/components/ui/Navbar";
 import RightBox from "@/components/ui/RightBox";
+
+const ChatSection = dynamic(
+  () => import('@/components/ui/ChatSection'),
+  { ssr: false }
+);
 
 export default function Home() {
   const message = "Powered by DermaWiseAI";
@@ -20,13 +26,18 @@ export default function Home() {
             setDiagnosisData={setDiagnosisData} 
             setIsLoading={setIsLoading} 
           />
-          <RightBox 
-            diagnosisData={diagnosisData} 
-            isLoading={isLoading} 
-          />
+          <div className="flex-1 flex flex-col">
+            <RightBox 
+              diagnosisData={diagnosisData} 
+              isLoading={isLoading} 
+            />
+            {diagnosisData?.disease && (
+              <ChatSection disease={diagnosisData.disease} />
+            )}
+          </div>
         </div>
-        <Footer message={message} />
       </div>
+      <Footer message={message} />
     </div>
   );
 }

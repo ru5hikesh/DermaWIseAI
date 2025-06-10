@@ -191,7 +191,7 @@ class BedrockClient:
             )
             
             response_body = json.loads(response.get('body').read())
-            logger.info("Successfully received response from AWS Bedrock")
+            logger.info("Successfully received response from Claude model")
             
             return {
                 'success': True,
