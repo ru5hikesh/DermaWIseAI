@@ -37,7 +37,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <Footer message={message} />
     </div>
   );
 }
