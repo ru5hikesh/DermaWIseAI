@@ -41,14 +41,12 @@
     The application of machine learning in skin disease detection holds great promise, especially in areas where expert dermatological services are limited. By automating the classification of dermatoscopic images, we aim to improve the accessibility and accuracy of skin disease diagnosis, offering a potential tool for early detection and treatment.
 
 
-    make .venv for python version 10 - source .venv/bin/activate
-
-    Alright bet, here’s a clean and crisp `README.md` snippet tailored for that exact scenario — **new laptop**, **fresh clone**, **no `requirements.txt`**, and you need **Python 3.10.x** via `pyenv`. Plug and play 🚀:
-
     ---
 
-    ## ⚙️ Setup Instructions (for a fresh laptop)
-
+    ## Setup Instructions
+    
+    make .venv for python version 10 - source .venv/bin/activate
+    
     ### 1. Clone the repo
     ```bash
     git clone https://github.com/your-username/DermaWiseAI.git
@@ -66,15 +64,11 @@
     pyenv local 3.10.14  # sets it for this project
     ```
 
-    ---
-
     ### 3. Create a virtual environment
     ```bash
     python3 -m venv .venv
     source .venv/bin/activate  # Mac/Linux
     ```
-
-    ---
 
     ### 4. Install dependencies manually
     > Since there's no `requirements.txt`, install deps like this:
@@ -86,64 +80,32 @@
     for Powershell
     Perfect. Here's the TL;DR of what you did in PowerShell:
 
----
+### **What You Did (Windows / PowerShell version)**
 
-### 🧠 **What You Did (Windows / PowerShell version)**
-
-1. **Created a virtual env**  
+**Created a virtual env**  
    ```powershell
    python -m venv .venv
    ```
 
-2. **Activated it (PowerShell style)**  
+**Activated it (PowerShell style)**  
    ```powershell
    .venv\Scripts\Activate.ps1
    ```
 
-3. **(Optional fix)** Allowed script execution if blocked  
+**(Optional fix)** Allowed script execution if blocked  
    ```powershell
    Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
    ```
 
-4. **Installed your dependencies**  
+**Installed your dependencies**  
    ```powershell
    pip install django numpy pandas matplotlib seaborn scikit-learn tensorflow
    ```
 
-5. **Ran the Django backend**  
+**Ran the Django backend**  
    ```powershell
    cd backend
    python manage.py runserver
    ```
-
----
-
-    folder structure
-    DermaWIseAI/
-    ├── .venv/
-    ├── README.md                   # Project documentation
-    ├── backend/
-    │   ├── backend/                # Django project settings
-    │   ├── manage.py               # Django management script
-    │   ├── db.sqlite3              # SQLite database
-    │   └── predictor/              # Django app for AI prediction
-    │       ├── __init__.py
-    │       ├── admin.py            # Django admin configuration
-    │       ├── apps.py             # App configuration
-    │       ├── models.py           # Database models
-    │       ├── views.py            # API views/endpoints
-    │       ├── tests.py            # Unit tests
-    │       ├── model.py            # AI model implementation (active file)
-    │       ├── dataset/            # Training/testing datasets
-    │       ├── logs/               # Model training logs
-    │       ├── model/              # Saved model files
-    │       └── results/            # Prediction results
-    │
-    └── frontend/                   # Next.js frontend
-        ├── src/                    # Source code
-        ├── package.json            # Node.js dependencies
-        ├── next.config.mjs         # Next.js configuration
-        ├── tailwind.config.mjs     # Tailwind CSS configuration
-        └── README.md               # Frontend documentation
 
 
